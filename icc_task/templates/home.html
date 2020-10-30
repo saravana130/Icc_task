@@ -1,0 +1,66 @@
+<html>
+   <head>
+      <title>ICC task</title>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+      <script src="https://unpkg.com/vue-router@2.0.0"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.4.8/vue-router.min.js"></script>
+        <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   </head>
+   <body>
+      <div id = "app">
+        <nav>
+            <div class="nav-wrapper #26c6da cyan lighten-1">
+              
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+               
+                  <li>   <router-link to = "/">Jobs</router-link></li>
+                
+              </ul>
+            </div>
+          </nav>
+         <!-- route outlet -->
+         <div class="container">
+
+         <div class="row">
+            <div class="col s12">
+              <div class="card #e0f7fa cyan lighten-5">
+                <div class="card-content">
+                  <span class="card-title"></span>
+                  <router-view></router-view>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+         </div>
+         <!-- component matched by the route will render here -->
+         
+      </div>
+      <script src="jobs.vue.js"></script>
+      <script src="job.vue.js"></script>
+      <!-- <script src="job_apply.vue.js"></script> -->
+
+      <script type = "text/javascript">
+      	console.log(545464);
+
+        
+         const routes = [
+            { path: '/', component: List },
+            { path: '/job/:job_id', component: job,name:job},
+            // { path: '/jobapply/:jobid', component: jobaplly,name:jobapply}
+            // { path: '/JobEdit', component: JobEdit },
+            // { path: '/jobDelete', component: jobDelete },
+         ];
+         const router = new VueRouter({
+            routes // short for `routes: routes`
+         });
+         var vm = new Vue({
+            el: '#app',
+            router
+         });
+      </script>
+   </body>
+</html>
