@@ -4,7 +4,6 @@ import os
 from sqlalchemy.orm import Session
 from fastapi import Depends, FastAPI, HTTPException ,File, UploadFile,Form,Request
 import shutil
-from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import models, schemas, crud
 from database import engine, SessionLocal
